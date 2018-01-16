@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/guide_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dp"
+        android:text="开始体验"
+        android:textColor="@color/text_guide_selector"
+        android:background="@drawable/selector_btn_guide"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp">
+
+        <LinearLayout
+            android:id="@+id/point_list"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/red_point"
+            android:layout_marginLeft="10px"
+            android:layout_marginRight="10px"
+            android:src="@drawable/shape_point_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="PxUsage" />
+
+    </RelativeLayout>
+
 
 </RelativeLayout>

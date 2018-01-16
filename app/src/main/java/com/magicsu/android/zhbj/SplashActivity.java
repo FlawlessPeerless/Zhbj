@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -11,9 +12,10 @@ import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.RelativeLayout;
 
-import com.magicsu.android.activity.GuideActivity;
-import com.magicsu.android.activity.MainActivity;
+import com.magicsu.android.zhbj.activity.GuideActivity;
+import com.magicsu.android.zhbj.activity.MainActivity;
 import com.magicsu.android.zhbj.util.SpUtil;
+
 
 /**
  * 启动页
@@ -21,7 +23,6 @@ import com.magicsu.android.zhbj.util.SpUtil;
  */
 
 public class SplashActivity extends AppCompatActivity {
-
     private RelativeLayout mRoot;
 
     @Override
