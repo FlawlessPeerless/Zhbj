@@ -40,7 +40,7 @@ public class GuideActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // 取出默认头部
+        // 去除默认头部
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_guide);
 
@@ -102,9 +102,9 @@ public class GuideActivity extends AppCompatActivity {
         };
 
         mImageViewList = new ArrayList<>();
-        for (int i = 0; i < mGuideImages.length; i++) {
+        for (int mGuideImage : mGuideImages) {
             ImageView view = new ImageView(this);
-            view.setBackgroundResource(mGuideImages[i]);
+            view.setBackgroundResource(mGuideImage);
             view.setScaleType(ImageView.ScaleType.CENTER_CROP);
             mImageViewList.add(view);
 
@@ -113,7 +113,7 @@ public class GuideActivity extends AppCompatActivity {
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT);
-            params.setMargins(10,0,10,0);
+            params.setMargins(10, 0, 10, 0);
             point.setLayoutParams(params);
             mLinearLayout.addView(point);
         }
