@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.magicsu.android.zhbj.activity.MainActivity;
+
 /**
  * fragment基类
  * Created by admin on 2018/1/16.
@@ -41,4 +43,9 @@ public abstract class BaseFragment extends Fragment {
     public abstract View initView();
 
     public abstract void initData();
+
+    public void toggle() {
+        MainActivity mainUI = (MainActivity)mActivity;
+        mainUI.toggle();
+    }
 }

@@ -26,4 +26,15 @@ public class SpUtil {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean(key, value).apply();
     }
+
+    public static String getString(Context context, String key, String defval) {
+        if (sharedPreferences == null) sharedPreferences = getSp(context);
+        return sharedPreferences.getString(key, defval);
+    }
+
+    public static void setString(Context context, String key, String value) {
+        if (sharedPreferences == null) sharedPreferences = getSp(context);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(key, value).apply();
+    }
 }
