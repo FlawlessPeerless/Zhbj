@@ -54,7 +54,16 @@ public class LeftMenuFragment extends BaseFragment {
             mCurrentPos = position;
             mLeftMenuAdapter.notifyDataSetChanged();
             toggle();
+            setCurrentDetailPager(position);
         });
+    }
+
+    /**
+     * 设置当前详情页
+     * @param position 当前位置
+     */
+    private void setCurrentDetailPager(int position) {
+        // 获取新闻中心对象
     }
 
     class LeftMenuAdapter extends BaseAdapter {
