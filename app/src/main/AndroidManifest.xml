@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.magicsu.android.zhbj.activity.GuideActivity" />
-        <activity android:name="com.magicsu.android.zhbj.activity.MainActivity" />
+        <activity android:name="com.magicsu.android.zhbj.activity.MainActivity"
+            android:theme="@style/Theme.PageIndicatorDefaults"/>
     </application>
 </manifest>

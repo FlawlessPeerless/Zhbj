@@ -26,4 +26,10 @@
         <item name="android:layout_weight">1</item>
         <item name="android:textColor">@color/text_tab_selector</item>
     </style>
+
+    <!--pager指示器主题-->
+    <style name="Theme.PageIndicatorDefaults" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="vpiIconPageIndicatorStyle">@style/Widget.IconPageIndicator</item>
+        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>
+    </style>
 </resources>

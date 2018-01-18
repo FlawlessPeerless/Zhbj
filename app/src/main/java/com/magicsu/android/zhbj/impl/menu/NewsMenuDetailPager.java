@@ -9,11 +9,13 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.magicsu.android.zhbj.R;
 import com.magicsu.android.zhbj.base.BaseMenuDetailPager;
 import com.magicsu.android.zhbj.domain.NewsMenu;
+import com.viewpagerindicator.TabPageIndicator;
 
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
@@ -27,7 +29,9 @@ import java.util.ArrayList;
 
 public class NewsMenuDetailPager extends BaseMenuDetailPager {
 
+    private TabPageIndicator mTabPageIndicator;
     private ViewPager mViewPager;
+    private ImageButton mNextButton;
 
     private ArrayList<NewsMenu.NewsMenuData.NewsTabData> mNewsTabData;
     private ArrayList<TabDetailPager> mTabDetailPagers;
@@ -41,7 +45,9 @@ public class NewsMenuDetailPager extends BaseMenuDetailPager {
     @Override
     public View initView() {
         View view = LayoutInflater.from(mActivity).inflate(R.layout.pager_news_detail, null, false);
+        mTabPageIndicator = view.findViewById(R.id.indicator);
         mViewPager = view.findViewById(R.id.view_pager_news_menu_detail);
+        mNextButton = view.findViewById(R.id.button_next);
         return view;
     }
 
@@ -54,6 +60,15 @@ public class NewsMenuDetailPager extends BaseMenuDetailPager {
         }
         mNewsMenuDetailAdapter = new NewsMenuDetailAdapter();
         mViewPager.setAdapter(mNewsMenuDetailAdapter);
+        // 绑定tabpager 和 viewpager(必须在setAdapter之后)
+        mTabPageIndicator.setViewPager(mViewPager);
+        mTabPageIndicator.setCurrentItem(0);
+        mNextButton.setOnClickListener(v -> {
+            int currentItem = mViewPager.getCurrentItem();
+            if (currentItem == mTabDetailPagers.size()-1) return;
+            currentItem++;
+            mViewPager.setCurrentItem(currentItem);
+        });
     }
 
     class NewsMenuDetailAdapter extends PagerAdapter {
@@ -80,6 +95,16 @@ public class NewsMenuDetailPager extends BaseMenuDetailPager {
         @Override
         public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
             container.removeView((View) object);
+        }
+
+        /**
+         * 指定指示器的标题
+         * @param position 下标
+         * @return
+         */
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mNewsTabData.get(position).title;
         }
     }
 }
