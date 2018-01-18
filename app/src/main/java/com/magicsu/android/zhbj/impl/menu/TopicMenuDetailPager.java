@@ -7,13 +7,16 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.magicsu.android.zhbj.base.BaseMenuDetailPager;
+import com.magicsu.android.zhbj.domain.NewsMenu;
+
+import java.util.ArrayList;
 
 /**
  * Created by admin on 2018/1/17.
  */
 
 public class TopicMenuDetailPager extends BaseMenuDetailPager {
-    public TopicMenuDetailPager(Activity activity) {
+    public TopicMenuDetailPager(Activity activity, ArrayList<NewsMenu.NewsMenuData.NewsTabData> children) {
         super(activity);
     }
 

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.magicsu.android.zhbj.R;
 import com.magicsu.android.zhbj.activity.MainActivity;
 import com.magicsu.android.zhbj.domain.NewsMenu;
+import com.magicsu.android.zhbj.impl.NewsCenterPager;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -45,6 +46,8 @@ public class LeftMenuFragment extends BaseFragment {
 
     // 设置侧边栏数据
     public void setMenuData(ArrayList<NewsMenu.NewsMenuData> data) {
+        // 每次进入重置当前页面position
+        mCurrentPos = 0;
         // 更新页面
         mNewsMenuData = data;
         // 设置adapter
@@ -54,16 +57,19 @@ public class LeftMenuFragment extends BaseFragment {
             mCurrentPos = position;
             mLeftMenuAdapter.notifyDataSetChanged();
             toggle();
-            setCurrentDetailPager(position);
+            setCurrentDetailPager();
         });
     }
 
     /**
      * 设置当前详情页
-     * @param position 当前位置
      */
-    private void setCurrentDetailPager(int position) {
+    private void setCurrentDetailPager() {
         // 获取新闻中心对象
+        MainActivity mainUI = (MainActivity) mActivity;
+        ContentFragment fragment = mainUI.getContentFragment();
+        NewsCenterPager newsCenterPager = fragment.getNewsCenterPager();
+        newsCenterPager.setCurrentDetailPager(mCurrentPos);
     }
 
     class LeftMenuAdapter extends BaseAdapter {

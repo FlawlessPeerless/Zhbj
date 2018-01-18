@@ -10,7 +10,7 @@ import android.view.View;
 
 public abstract class BaseMenuDetailPager {
     protected Activity mActivity;
-    private final View mRootView;
+    public final View mRootView;
 
     public BaseMenuDetailPager(Activity activity) {
         mActivity = activity;

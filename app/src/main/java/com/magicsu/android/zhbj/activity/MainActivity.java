@@ -19,6 +19,7 @@ import com.magicsu.android.zhbj.fragment.LeftMenuFragment;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG_LEFT_MENU = "fragment_left_menu";
+    public static final String TAG_CONTENT_DETAIL = "fragment_content_detail";
 
     public DrawerLayout mDrawerLayout;
     private FragmentManager mFragmentManager;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         mFragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
         transaction.replace(R.id.left_wrapper, new LeftMenuFragment(), TAG_LEFT_MENU);
-        transaction.replace(R.id.main_wrapper, new ContentFragment());
+        transaction.replace(R.id.main_wrapper, new ContentFragment(), TAG_CONTENT_DETAIL);
         transaction.commit();
 
     }
@@ -50,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
 
     public LeftMenuFragment getLeftMenuFragment() {
         return (LeftMenuFragment) mFragmentManager.findFragmentByTag(TAG_LEFT_MENU);
+    }
+
+    public ContentFragment getContentFragment() {
+        return (ContentFragment) mFragmentManager.findFragmentByTag(TAG_CONTENT_DETAIL);
     }
 
     public void toggle() {
