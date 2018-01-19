@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 
 public class NewsTabBean {
-    public Object data;
+    public NewsTab data;
 
     public class NewsTab {
         public String more;
