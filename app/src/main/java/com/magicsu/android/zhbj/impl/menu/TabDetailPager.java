@@ -213,13 +213,18 @@ public class TabDetailPager extends BaseMenuDetailPager {
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             // TODO 这里对不同holder进行不同处理
-            ImageOptions options = new ImageOptions.Builder()
-                    .setLoadingDrawableId(R.drawable.news_pic_default)
-                    .setUseMemCache(true)
-                    .build();
-            x.image().bind(holder.mImageView, mNewsList.get(position).listimage, options);
-            holder.mTextViewTitle.setText(mNewsList.get(position).title);
-            holder.mTextViewDate.setText(mNewsList.get(position).pubdate);
+            if (getItemViewType(position) == TYPE_HEADER) {
+
+            } else {
+                // 普通holder
+                ImageOptions options = new ImageOptions.Builder()
+                        .setLoadingDrawableId(R.drawable.news_pic_default)
+                        .setUseMemCache(true)
+                        .build();
+                x.image().bind(holder.mImageView, mNewsList.get(position).listimage, options);
+                holder.mTextViewTitle.setText(mNewsList.get(position).title);
+                holder.mTextViewDate.setText(mNewsList.get(position).pubdate);
+            }
         }
 
         @Override
