@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.magicsu.android.zhbj">
 
@@ -12,16 +13,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".SplashActivity"
             android:theme="@style/AppThemeNoBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.magicsu.android.zhbj.activity.GuideActivity" />
-        <activity android:name="com.magicsu.android.zhbj.activity.MainActivity"
-            android:theme="@style/Theme.PageIndicatorDefaults"/>
+        <activity android:name=".activity.GuideActivity" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/Theme.PageIndicatorDefaults" />
+        <activity android:name=".activity.NewsDetailActivity"></activity>
     </application>
+
 </manifest>

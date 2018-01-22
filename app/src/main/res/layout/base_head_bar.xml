@@ -15,6 +15,18 @@
         android:textColor="#fff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <ImageButton
+        android:id="@+id/button_back"
+        android:padding="10dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:background="@android:color/transparent"
+        android:visibility="gone"
+        android:src="@drawable/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <ImageButton
         android:padding="10dp"
         android:id="@+id/button_head"
@@ -24,5 +36,30 @@
         android:src="@drawable/img_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <!--右侧按钮组-->
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/button_group_control"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:padding="10dp"
+            android:id="@+id/button_share"
+            android:src="@drawable/icon_share"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageButton
+            android:id="@+id/button_text_size"
+            android:padding="10dp"
+            android:src="@drawable/icon_textsize"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
 </RelativeLayout>
